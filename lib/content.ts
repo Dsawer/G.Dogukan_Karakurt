@@ -23,16 +23,21 @@ export type SkillGroup = {
 
 export const profile = {
   name: "Gürkan Doğukan Karakurt",
-  roles: ["Civil Engineer", "Software Developer", "Graduate Researcher"],
+  roles: ["Graduate Researcher", "Civil Engineer", "Software Developer"],
   headline:
-    "Research Assistant @ METU Civil Engineering — Construction Management",
-  eyebrow: "METU · Graduate Student",
+    "MSc Candidate, Construction Engineering & Management — METU",
+  eyebrow: "METU · CE 520 Graduate Seminar · Spring 2026",
   about: [
-    "I graduated from Middle East Technical University with a degree in Civil Engineering and a double major in Corporate Finance, and I am now continuing at METU as a Research Assistant and MSc student in Construction Management. My undergraduate path combined classical civil engineering with corporate finance and Building Information Modeling (BIM), which shaped my interest in approaching construction problems from both an engineering and a financial perspective.",
-    "In parallel, since 2019 I have grown into full-stack software development. I work most comfortably in Python/Django, modern JavaScript, and React/React Native, and I have shipped production projects ranging from web-based trading interfaces to AI-assisted mobile applications. Between 2023 and 2024 I led the quantitative strategy team of a trading startup, designing algorithms for scalping and swing strategies.",
-    "I also work as a freelance graphic designer and led the visual design of a 2024 Turkish municipal election campaign. My current research interests are Construction Management, BIM, and Machine Learning, with a focus on bringing optimisation and modern software tooling into planning, cost management, and structural decision-making."
+    "I am an MSc candidate and Research Assistant in Construction Engineering & Management at Middle East Technical University, supervised by Prof. Dr. Rıfat Sönmez. My research applies graph neural networks to BIM models, with the goal of generating complete construction precedence schedules directly from a building's geometry and standardized activity classifications.",
+    "I hold a BSc in Civil Engineering from METU, with a minor in Corporate Finance — a combination that lets me reason about construction projects both as engineering systems and as cost-driven programmes. My current research interests are BIM, graph neural networks, construction scheduling, and machine learning for the built environment.",
+    "Alongside academic work I have a long-standing practice in full-stack software development (Python/Django, React, React Native) and graphic design, including freelance work and the visual design of a 2024 Turkish municipal election campaign. I treat code, design, and engineering as complementary tools for the same problem: turning messy real-world domains into systems that scale."
   ],
-  researchInterests: ["Construction Management", "BIM", "Machine Learning"],
+  researchInterests: [
+    "BIM",
+    "Graph Neural Networks",
+    "Construction Scheduling",
+    "Machine Learning"
+  ],
   links: {
     orcid: "https://orcid.org/0009-0008-3277-5405",
     scholar: "https://scholar.google.com/citations?user=lYuZHmYAAAAJ",
@@ -47,13 +52,54 @@ export const iconLinks: IconLink[] = [
   { label: "LinkedIn", href: profile.links.linkedin, brand: "linkedin" }
 ];
 
+export const research = {
+  title:
+    "Predicting Construction Precedence Relationships from BIM Geometry with Machine Learning",
+  programme: "MSc Thesis · Construction Engineering & Management",
+  supervisor: "Prof. Dr. Rıfat Sönmez",
+  course: "CE 520 — Graduate Seminar, Spring 2026",
+  presentedOn: "Presented 12 May 2026 at METU",
+  pitch:
+    "Construction megaprojects miss budget 98 % of the time, largely because BIM and the construction schedule still do not talk to each other. This thesis closes that loop: given a BIM model with assigned OmniClass activities, a graph neural network predicts the entire FS, SS, FF, SF precedence network — regenerating schedules from the model on every design change.",
+  sections: [
+    {
+      label: "Problem",
+      body:
+        "The 4D BIM loop is broken: schedule logic is not derived from the model itself. Planners rebuild precedence by hand from drawings for each project. Recent text-based approaches (e.g. Amer, Jung & Golparvar-Fard, 2023, ILC) reach F1 91 % on activity pairs, but ignore geometry, hit token-window limits at real project scale, and produce loops and broken links."
+    },
+    {
+      label: "Approach",
+      body:
+        "A single graph neural network (GraphSAGE / GAT) consumes a three-layer IFC representation: native IFC class and geometry, Uniformat II classification, and OmniClass T22 activities. Message passing over BIM topology — adjacency, support, containment — yields probabilities for every candidate FS / SS / FF / SF link in the schedule. Standardized vocabularies replace free-form text and avoid LLM hallucinations."
+    },
+    {
+      label: "Contribution",
+      body:
+        "First end-to-end whole-schedule precedence predictor that grounds directly in BIM topology and standardized classification codes, instead of free-form activity text. Designed for transfer across firms and projects, with a roadmap to a defense in December 2027."
+    }
+  ],
+  images: [
+    {
+      src: "/assets/thesis-bim.jpg",
+      alt: "BIM model cutaway of a multi-storey reinforced-concrete building with mechanical systems exposed",
+      caption: "BIM model — geometry, topology, and classification feed the GNN."
+    },
+    {
+      src: "/assets/thesis-gnn.png",
+      alt: "Graph Neural Network architecture: input graph, graph convolution layers, regularization, output probabilities of links between nodes",
+      caption:
+        "Graph neural network — nodes are BIM elements, edges are precedence candidates."
+    }
+  ]
+} as const;
+
 export const education: Entry[] = [
   {
     period: "2025 — Present",
-    title: "MSc, Construction Management",
+    title: "MSc, Construction Engineering & Management",
     org: "Middle East Technical University (METU), Ankara",
     detail:
-      "Graduate research in Construction Management with a focus on BIM-driven planning and machine-learning approaches for construction analytics. Transferred from the Geotechnical Engineering programme in Spring 2025."
+      "Research Assistant. Thesis on BIM-driven scheduling with graph neural networks, supervised by Prof. Dr. Rıfat Sönmez. Transferred from the Geotechnical Engineering programme in Spring 2025."
   },
   {
     period: "2017 — 2023",
@@ -64,20 +110,20 @@ export const education: Entry[] = [
   },
   {
     period: "2019 — 2023",
-    title: "BSc Double Major, Corporate Finance",
+    title: "Minor, Corporate Finance",
     org: "Middle East Technical University (METU) — GPA 3.39 / 4.00",
     detail:
-      "Financial analysis, valuation, and quantitative methods alongside the civil engineering programme."
+      "Minor programme covering financial analysis, valuation, and quantitative methods alongside the civil engineering degree."
   }
 ];
 
 export const experience: Entry[] = [
   {
     period: "Oct 2025 — Present",
-    title: "Research Assistant — Construction Management",
+    title: "Research Assistant — Construction Engineering & Management",
     org: "Middle East Technical University (METU), Department of Civil Engineering",
     detail:
-      "Graduate research and teaching support within the Construction Management division. Focus areas include BIM-driven planning, construction analytics, and machine learning."
+      "Graduate research and teaching support within the Construction Engineering and Management division. Focus areas include BIM, graph neural networks for construction scheduling, and machine learning applied to the built environment."
   },
   {
     period: "Dec 2024 — Oct 2025",
@@ -91,93 +137,65 @@ export const experience: Entry[] = [
     title: "Head of Quantitative Strategies",
     org: "Vortex · Remote (Georgia)",
     detail:
-      "Designed and developed trading bots for financial markets. Built scalping and swing strategies, refined algorithm performance, and tailored bots to investor-specific mandates so the startup could offer customised allocation services."
+      "Designed and developed algorithmic trading systems for financial markets — scalping and swing strategies, performance tuning, and per-investor mandate customisation."
   },
   {
     period: "2021 — 2024",
     title: "Web Development Project Lead",
     org: "Self-initiated project",
     detail:
-      "Led a self-started web development project focused on financial markets, delivering a web-based trading interface end to end. Coordinated tasks across the project, owned product decisions, and extended the startup's capability around investment management."
+      "Led a self-started web development project focused on financial markets, delivering a web-based trading interface end to end and owning product decisions across the build."
   },
   {
     period: "Summer 2022",
     title: "Civil Engineering Intern",
     org: "ES Group — Erdemir Port Project, Zonguldak",
     detail:
-      "Worked across site operations, planning, and progress payments on a port construction project. Contributed to steel-pile design and took responsibility in cost control and project scheduling, bridging engineering principles with field execution."
+      "Worked across site operations, planning, and progress payments on a port construction project. Contributed to steel-pile design and took responsibility in cost control and project scheduling."
   },
   {
     period: "2020 — 2024",
     title: "Freelance Graphic Designer · 2024 Local Elections Lead Designer",
     org: "Independent",
     detail:
-      "Delivered posters, brochures, social media content, and campaign materials across freelance projects. In the 2024 Turkish local elections, served as lead designer for a mayoral campaign and owned the full digital content production pipeline."
+      "Delivered posters, brochures, social media content, and campaign materials across freelance projects. Served as lead designer for a 2024 Turkish mayoral campaign, owning the full digital content production pipeline."
   }
 ];
 
-export type ProjectMetric = { label: string; value: string };
-export type ProjectHighlight = { title: string; body: string };
+export type SelectedProject = {
+  title: string;
+  tagline: string;
+  meta: string;
+  blurb: string;
+  stack: string;
+};
 
-export const featuredProject = {
-  title: "Diyet Cebimde",
-  subtitle: "AI-powered diet & nutrition platform — full-stack, solo-built",
-  meta: [
-    "2025 — Ongoing",
-    "Sole Full-Stack Developer / Founder",
-    "Mobile + Web Admin + API"
-  ],
-  summary:
-    "A full-stack mobile platform that generates AI-driven weekly diet plans from each user's personal profile and health goals. Features photo-based meal recognition, manual nutrition tracking, weight and body-measurement logging, and a memory-equipped chatbot. I designed and built the entire system end to end — backend API, admin web panel, and the React Native mobile client.",
-  stack: [
-    "Django 5.2",
-    "DRF",
-    "PostgreSQL",
-    "SimpleJWT",
-    "Google OAuth",
-    "Gemini API",
-    "PuLP (LP)",
-    "React 18 + TS",
-    "Vite",
-    "Tailwind",
-    "React Query",
-    "Zustand",
-    "Expo SDK 53",
-    "React Native",
-    "NativeWind",
-    "i18next",
-    "Railway",
-    "EAS Build"
-  ],
-  highlights: [
-    {
-      title: "AI integration with hybrid optimisation",
-      body: "Survey data + calorie goal + allergens + preferred cuisines flow into Gemini for meal selection, then PuLP linear programming locks in exact portion sizes. Photo-based meal recognition runs on Gemini Vision and auto-writes to the daily intake. A chatbot keeps long-term memory via a ConversationSummary model so it actually remembers the user."
-    },
-    {
-      title: "Domain modelling & data integrity",
-      body: "A 34-field central FoodItem model with six calorie-band max portions and five-tier cuisine classification. When a MealPlan is created, the underlying food data is snapshotted — past plans never break when the source catalog changes. Pre/post-save signals keep DailyIntake and ManualTrackingEntry transactionally in sync to prevent double-counting."
-    },
-    {
-      title: "Resilient AI calling",
-      body: "Four model strategies (Fast / Smart / Vision / Cheap fallback), rate-limit handling with retry-delay parsed straight out of Gemini error responses, and an automatic fallback to the cheap model when budgets squeeze. Retry and rate limiting are treated as business logic, not as exception handling."
-    },
-    {
-      title: "Admin panel built for catalog operations",
-      body: "7-tab food editor modal, 34-column CSV import/export with append / upsert / replace modes and row-level savepoints, and six analytics dashboards (user growth, BMI distribution, top foods, engagement, survey demographics, retention) loaded in parallel with useQueries."
-    }
-  ] satisfies ProjectHighlight[],
-  metrics: [
-    { label: "Repos", value: "3" },
-    { label: "Food catalog", value: "~11,000" },
-    { label: "Django apps", value: "8" },
-    { label: "Mobile contexts", value: "15+" },
-    { label: "Largest React page", value: "~2,100 LOC" },
-    { label: "Languages", value: "TR / EN" }
-  ] satisfies ProjectMetric[]
-} as const;
+export const selectedProjects: SelectedProject[] = [
+  {
+    title: "Diyet Cebimde",
+    tagline: "AI-assisted diet & nutrition platform — full-stack, solo-built",
+    meta: "2025 — Ongoing · Mobile + Web Admin + API",
+    blurb:
+      "Mobile platform that generates AI-driven weekly diet plans from each user's profile and goals, with photo-based meal recognition, manual tracking, and a memory-equipped chatbot. Hybrid pipeline: Gemini for meal selection, PuLP linear programming for portion optimisation; snapshot architecture keeps historical plans stable when the food catalog changes.",
+    stack:
+      "Django 5.2 · DRF · PostgreSQL · Gemini API · PuLP · React 18 + TS · Expo / React Native · Railway"
+  }
+];
 
 export const skills: SkillGroup[] = [
+  {
+    name: "Research & Engineering",
+    pills: [
+      { label: "BIM", level: "Revit, IFC" },
+      { label: "Construction Mgmt", level: "scheduling, CPM" },
+      { label: "Graph Neural Networks", level: "GraphSAGE / GAT" },
+      { label: "Machine Learning", level: "PyTorch" },
+      { label: "AutoCAD", level: "upper-intermediate" },
+      { label: "SAP2000", level: "beginner-intermediate" },
+      { label: "EPANET", level: "advanced" },
+      { label: "MS Project", level: "intermediate" }
+    ]
+  },
   {
     name: "Software Development",
     pills: [
@@ -185,22 +203,11 @@ export const skills: SkillGroup[] = [
       { label: "HTML / CSS / JS", level: "advanced" },
       { label: "React", level: "intermediate" },
       { label: "PostgreSQL", level: "intermediate" },
-      { label: "MATLAB, Visual Basic", level: "advanced" },
-      { label: "Financial algorithms", level: "expert" }
+      { label: "MATLAB / VBA", level: "advanced" }
     ]
   },
   {
-    name: "Civil Engineering",
-    pills: [
-      { label: "AutoCAD", level: "upper-intermediate" },
-      { label: "Excel + VBA", level: "expert" },
-      { label: "SAP2000", level: "beginner-intermediate" },
-      { label: "EPANET", level: "advanced" },
-      { label: "MS Project", level: "intermediate" }
-    ]
-  },
-  {
-    name: "Graphic Design",
+    name: "Design",
     pills: [
       { label: "Photoshop", level: "advanced" },
       { label: "Illustrator", level: "advanced" },
@@ -219,9 +226,10 @@ export const skills: SkillGroup[] = [
 
 export const navItems = [
   { id: "about", label: "About" },
+  { id: "research", label: "Research" },
   { id: "education", label: "Education" },
   { id: "experience", label: "Experience" },
-  { id: "project", label: "Project" },
+  { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "resume", label: "Resume" }
 ];

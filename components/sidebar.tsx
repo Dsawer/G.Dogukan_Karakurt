@@ -49,16 +49,15 @@ export function Sidebar() {
             {profile.name}
           </h1>
           <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent">
-            Research Assistant @ METU
+            MSc Candidate · Research Assistant
           </p>
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-dim">
-            Civil Engineering — Construction Management
+            METU Construction Engineering &amp; Management
           </p>
         </div>
         <p className="max-w-[300px] text-[13.5px] leading-relaxed text-slate">
-          Graduate researcher working at the intersection of structural
-          engineering, applied finance, and full-stack software. Research
-          interests:{" "}
+          BIM-driven construction scheduling with graph neural networks, under
+          Prof. Dr. Rıfat Sönmez. Research interests:{" "}
           <span className="text-foreground">
             {profile.researchInterests.join(", ")}
           </span>

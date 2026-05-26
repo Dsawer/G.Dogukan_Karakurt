@@ -1,8 +1,9 @@
 import {
   education,
   experience,
-  featuredProject,
   profile,
+  research,
+  selectedProjects,
   skills
 } from "@/lib/content";
 
@@ -60,18 +61,29 @@ const printStyles = `
   .cv-entry .org { font-size: 9.5pt; color: #555; margin: 1px 0 2px; }
   .cv-entry p { font-size: 9.5pt; color: #555; margin: 2px 0 0; }
 
-  .cv-project {
+  .cv-thesis {
     border: 1px solid #ddd;
     border-left: 3px solid #1d4ed8;
     border-radius: 4px;
     padding: 8px 10px;
     page-break-inside: avoid;
   }
-  .cv-project h3 { font-size: 11pt; font-weight: 700; margin: 0; }
-  .cv-project .meta { font-size: 9pt; color: #777; margin: 2px 0 4px; }
-  .cv-project p { font-size: 9.5pt; color: #555; margin: 4px 0; }
-  .cv-project .stack { margin-top: 4px; font-size: 8.5pt; color: #1d4ed8; line-height: 1.5; }
-  .cv-project .stack strong { color: #111; font-weight: 700; }
+  .cv-thesis .programme { font-size: 8.5pt; color: #1d4ed8; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin: 0 0 4px; }
+  .cv-thesis h3 { font-size: 11pt; font-weight: 700; margin: 0 0 4px; color: #111; }
+  .cv-thesis .meta { font-size: 8.5pt; color: #777; margin: 0 0 6px; text-transform: uppercase; letter-spacing: 0.12em; }
+  .cv-thesis p { font-size: 9.5pt; color: #555; margin: 4px 0; }
+  .cv-thesis .heading { font-size: 8.5pt; font-weight: 700; color: #1d4ed8; text-transform: uppercase; letter-spacing: 0.12em; margin-top: 6px; }
+
+  .cv-proj {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    padding: 6px 10px;
+    page-break-inside: avoid;
+  }
+  .cv-proj h3 { font-size: 10.5pt; font-weight: 700; margin: 0; }
+  .cv-proj .meta { font-size: 8.5pt; color: #777; margin: 2px 0 4px; }
+  .cv-proj p { font-size: 9.5pt; color: #555; margin: 4px 0; }
+  .cv-proj .stack { margin-top: 4px; font-size: 8.5pt; color: #1d4ed8; }
 
   .cv-skills { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 18px; }
   .cv-skills div { font-size: 9.5pt; color: #555; }
@@ -102,10 +114,13 @@ export default function CvPrintPage() {
         </header>
 
         <p className="cv-summary">
-          {profile.headline}. Civil engineer with a double major in Corporate
-          Finance, combining structural engineering with full-stack software
-          development (Python/Django, React, React Native) and applied graphic
-          design. Research interests: {profile.researchInterests.join(", ")}.
+          MSc candidate and Research Assistant in Construction Engineering &amp;
+          Management at METU, supervised by Prof. Dr. Rıfat Sönmez. Thesis
+          applies graph neural networks to BIM models to generate complete
+          construction precedence schedules from a building&apos;s geometry and
+          standardized activity classifications. Background in civil engineering
+          (BSc, METU) with a minor in Corporate Finance and a long-running
+          practice in full-stack software development and graphic design.
         </p>
 
         <section className="cv-section">
@@ -123,6 +138,25 @@ export default function CvPrintPage() {
         </section>
 
         <section className="cv-section">
+          <h2>Research</h2>
+          <div className="cv-thesis">
+            <p className="programme">{research.programme}</p>
+            <h3>{research.title}</h3>
+            <p className="meta">
+              Supervisor: {research.supervisor} · {research.course} ·{" "}
+              {research.presentedOn}
+            </p>
+            <p>{research.pitch}</p>
+            {research.sections.map((s) => (
+              <div key={s.label}>
+                <p className="heading">{s.label}</p>
+                <p>{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="cv-section">
           <h2>Experience</h2>
           {experience.map((e) => (
             <div className="cv-entry" key={`${e.period}-${e.title}`}>
@@ -137,25 +171,19 @@ export default function CvPrintPage() {
         </section>
 
         <section className="cv-section">
-          <h2>Featured Project</h2>
-          <div className="cv-project">
-            <h3>
-              {featuredProject.title} — {featuredProject.subtitle}
-            </h3>
-            <p className="meta">{featuredProject.meta.join(" · ")}</p>
-            <p>{featuredProject.summary}</p>
-            <p>
-              Engineering highlights: hybrid AI + linear programming pipeline
-              (Gemini for meal selection, PuLP for portion optimisation),
-              snapshot architecture so historical plans never break when the
-              catalog changes, four-tier model fallback strategy for rate-limit
-              resilience, 34-field central food model with row-level CSV import
-              savepoints, six parallel-loaded analytics dashboards.
-            </p>
-            <p className="stack">
-              <strong>Stack:</strong> {featuredProject.stack.join(" · ")}
-            </p>
-          </div>
+          <h2>Selected Projects</h2>
+          {selectedProjects.map((p) => (
+            <div className="cv-proj" key={p.title}>
+              <h3>
+                {p.title} — {p.tagline}
+              </h3>
+              <p className="meta">{p.meta}</p>
+              <p>{p.blurb}</p>
+              <p className="stack">
+                <strong style={{ color: "#111" }}>Stack:</strong> {p.stack}
+              </p>
+            </div>
+          ))}
         </section>
 
         <section className="cv-section">

@@ -4,7 +4,8 @@ import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Sidebar } from "@/components/sidebar";
 import { Timeline } from "@/components/timeline";
-import { FeaturedProject } from "@/components/project-card";
+import { Research } from "@/components/research";
+import { Projects } from "@/components/project-card";
 import { SkillLines } from "@/components/skills-grid";
 import { education, experience, profile } from "@/lib/content";
 
@@ -40,6 +41,10 @@ export default function HomePage() {
             </div>
           </RowSection>
 
+          <RowSection id="research" title="Research">
+            <Research />
+          </RowSection>
+
           <RowSection id="education" title="Education">
             <Timeline data={education} />
           </RowSection>
@@ -48,8 +53,8 @@ export default function HomePage() {
             <Timeline data={experience} />
           </RowSection>
 
-          <RowSection id="project" title="Featured Project">
-            <FeaturedProject />
+          <RowSection id="projects" title="Selected Projects">
+            <Projects />
           </RowSection>
 
           <RowSection id="skills" title="Skills">

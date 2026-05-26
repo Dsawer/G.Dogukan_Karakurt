@@ -37,3 +37,7 @@ _keep
 # source Turkish CV PDF — contains private contact details (address, phone, email).
 # kept locally as the source the portrait was extracted from, but NOT published.
 Gürkan Doğukan Karakurt Özgeçmiş.pdf
+
+# seminar source — large, lives locally
+CE520_Seminar_Karakurt_*.pptx
+_seminar_extract
