@@ -77,13 +77,36 @@
     color: var(--accent);
   }
 
-  .row-hover {
-    transition: background-color 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+  .row-entry .row-icon,
+  .row-entry .row-title,
+  .row-entry .row-period {
+    transition: color 200ms ease, background-color 200ms ease, border-color 200ms ease;
+  }
+  .row-entry .row-arrow {
+    display: inline-block;
+    margin-left: 6px;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: opacity 220ms ease, transform 220ms ease;
+    color: var(--accent);
   }
   @media (hover: hover) {
-    .row-hover:hover {
-      background-color: var(--surface);
-      box-shadow: inset 2px 0 0 var(--accent);
+    .row-entry:hover .row-icon,
+    .row-entry:focus-within .row-icon {
+      background-color: var(--accent);
+      color: var(--background);
+      border-color: var(--accent);
+    }
+    .row-entry:hover .row-title,
+    .row-entry:focus-within .row-title,
+    .row-entry:hover .row-period,
+    .row-entry:focus-within .row-period {
+      color: var(--accent);
+    }
+    .row-entry:hover .row-arrow,
+    .row-entry:focus-within .row-arrow {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
