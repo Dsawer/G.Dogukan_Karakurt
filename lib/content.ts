@@ -4,11 +4,23 @@ export type IconLink = {
   brand: "orcid" | "scholar" | "linkedin";
 };
 
+export type EntryIcon =
+  | "graduation"
+  | "book"
+  | "hardhat"
+  | "finance"
+  | "research"
+  | "code"
+  | "mobile"
+  | "trading"
+  | "design";
+
 export type Entry = {
   period: string;
   title: string;
   org: string;
   detail: string;
+  icon: EntryIcon;
 };
 
 export type Pill = {
@@ -99,21 +111,24 @@ export const education: Entry[] = [
     title: "MSc, Construction Engineering & Management",
     org: "Middle East Technical University (METU), Ankara",
     detail:
-      "Research Assistant. Thesis on BIM-driven scheduling with graph neural networks, supervised by Prof. Dr. Rıfat Sönmez. Transferred from the Geotechnical Engineering programme in Spring 2025."
+      "Research Assistant. Thesis on BIM-driven scheduling with graph neural networks, supervised by Prof. Dr. Rıfat Sönmez. Transferred from the Geotechnical Engineering programme in Spring 2025.",
+    icon: "graduation"
   },
   {
     period: "2017 — 2023",
     title: "BSc, Civil Engineering",
     org: "Middle East Technical University (METU) — GPA 3.35 / 4.00",
     detail:
-      "Coursework in structural analysis, geotechnics, hydraulics, construction management, and Building Information Modeling."
+      "Coursework in structural analysis, geotechnics, hydraulics, construction management, and Building Information Modeling.",
+    icon: "hardhat"
   },
   {
     period: "2019 — 2023",
     title: "Minor, Corporate Finance",
     org: "Middle East Technical University (METU) — GPA 3.39 / 4.00",
     detail:
-      "Minor programme covering financial analysis, valuation, and quantitative methods alongside the civil engineering degree."
+      "Minor programme covering financial analysis, valuation, and quantitative methods alongside the civil engineering degree.",
+    icon: "finance"
   }
 ];
 
@@ -123,62 +138,48 @@ export const experience: Entry[] = [
     title: "Research Assistant — Construction Engineering & Management",
     org: "Middle East Technical University (METU), Department of Civil Engineering",
     detail:
-      "Graduate research and teaching support within the Construction Engineering and Management division. Focus areas include BIM, graph neural networks for construction scheduling, and machine learning applied to the built environment."
+      "Graduate research and teaching support within the Construction Engineering and Management division. Focus areas include BIM, graph neural networks for construction scheduling, and machine learning applied to the built environment.",
+    icon: "research"
   },
   {
     period: "Dec 2024 — Oct 2025",
     title: "Software Engineer",
     org: "Mega Mühendislik, Türkiye",
     detail:
-      "Developed software for engineering workflows, contributing across the stack to ship reliable internal tooling before moving full-time into graduate research at METU."
+      "Developed software for engineering workflows, contributing across the stack to ship reliable internal tooling before moving full-time into graduate research at METU.",
+    icon: "code"
+  },
+  {
+    period: "2023 — Present",
+    title: "Founder & Full-Stack Developer — Diyet Cebimde",
+    org: "Self-initiated · AI-assisted diet & nutrition platform",
+    detail:
+      "Solo-built mobile platform that generates AI-driven weekly diet plans from each user's profile and goals, with photo-based meal recognition, manual tracking, weight/measurement logging, and a memory-equipped chatbot. Hybrid pipeline (Gemini for meal selection, PuLP linear programming for portion optimisation) and snapshot architecture keep historical plans stable across catalog updates. Three repositories: Django + DRF + PostgreSQL backend, React 18 + Vite admin panel, Expo + React Native mobile client.",
+    icon: "mobile"
   },
   {
     period: "2023 — 2024",
     title: "Head of Quantitative Strategies",
     org: "Vortex · Remote (Georgia)",
     detail:
-      "Designed and developed algorithmic trading systems for financial markets — scalping and swing strategies, performance tuning, and per-investor mandate customisation."
-  },
-  {
-    period: "2021 — 2024",
-    title: "Web Development Project Lead",
-    org: "Self-initiated project",
-    detail:
-      "Led a self-started web development project focused on financial markets, delivering a web-based trading interface end to end and owning product decisions across the build."
+      "Designed and developed algorithmic trading systems for financial markets — scalping and swing strategies, performance tuning, and per-investor mandate customisation.",
+    icon: "trading"
   },
   {
     period: "Summer 2022",
     title: "Civil Engineering Intern",
     org: "ES Group — Erdemir Port Project, Zonguldak",
     detail:
-      "Worked across site operations, planning, and progress payments on a port construction project. Contributed to steel-pile design and took responsibility in cost control and project scheduling."
+      "Worked across site operations, planning, and progress payments on a port construction project. Contributed to steel-pile design and took responsibility in cost control and project scheduling.",
+    icon: "hardhat"
   },
   {
     period: "2020 — 2024",
     title: "Freelance Graphic Designer · 2024 Local Elections Lead Designer",
     org: "Independent",
     detail:
-      "Delivered posters, brochures, social media content, and campaign materials across freelance projects. Served as lead designer for a 2024 Turkish mayoral campaign, owning the full digital content production pipeline."
-  }
-];
-
-export type SelectedProject = {
-  title: string;
-  tagline: string;
-  meta: string;
-  blurb: string;
-  stack: string;
-};
-
-export const selectedProjects: SelectedProject[] = [
-  {
-    title: "Diyet Cebimde",
-    tagline: "AI-assisted diet & nutrition platform — full-stack, solo-built",
-    meta: "2025 — Ongoing · Mobile + Web Admin + API",
-    blurb:
-      "Mobile platform that generates AI-driven weekly diet plans from each user's profile and goals, with photo-based meal recognition, manual tracking, and a memory-equipped chatbot. Hybrid pipeline: Gemini for meal selection, PuLP linear programming for portion optimisation; snapshot architecture keeps historical plans stable when the food catalog changes.",
-    stack:
-      "Django 5.2 · DRF · PostgreSQL · Gemini API · PuLP · React 18 + TS · Expo / React Native · Railway"
+      "Delivered posters, brochures, social media content, and campaign materials across freelance projects. Served as lead designer for a 2024 Turkish mayoral campaign, owning the full digital content production pipeline.",
+    icon: "design"
   }
 ];
 
@@ -229,7 +230,6 @@ export const navItems = [
   { id: "research", label: "Research" },
   { id: "education", label: "Education" },
   { id: "experience", label: "Experience" },
-  { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "resume", label: "Resume" }
 ];

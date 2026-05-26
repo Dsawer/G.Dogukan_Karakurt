@@ -5,7 +5,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { Sidebar } from "@/components/sidebar";
 import { Timeline } from "@/components/timeline";
 import { Research } from "@/components/research";
-import { Projects } from "@/components/project-card";
 import { SkillLines } from "@/components/skills-grid";
 import { education, experience, profile } from "@/lib/content";
 
@@ -51,10 +50,6 @@ export default function HomePage() {
 
           <RowSection id="experience" title="Experience">
             <Timeline data={experience} />
-          </RowSection>
-
-          <RowSection id="projects" title="Selected Projects">
-            <Projects />
           </RowSection>
 
           <RowSection id="skills" title="Skills">

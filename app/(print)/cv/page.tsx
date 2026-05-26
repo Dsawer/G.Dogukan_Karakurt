@@ -3,7 +3,6 @@ import {
   experience,
   profile,
   research,
-  selectedProjects,
   skills
 } from "@/lib/content";
 
@@ -166,22 +165,6 @@ export default function CvPrintPage() {
                 <p className="org">{e.org}</p>
                 <p>{e.detail}</p>
               </div>
-            </div>
-          ))}
-        </section>
-
-        <section className="cv-section">
-          <h2>Selected Projects</h2>
-          {selectedProjects.map((p) => (
-            <div className="cv-proj" key={p.title}>
-              <h3>
-                {p.title} — {p.tagline}
-              </h3>
-              <p className="meta">{p.meta}</p>
-              <p>{p.blurb}</p>
-              <p className="stack">
-                <strong style={{ color: "#111" }}>Stack:</strong> {p.stack}
-              </p>
             </div>
           ))}
         </section>
