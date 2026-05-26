@@ -55,8 +55,11 @@ export default function HomePage() {
             <SkillLines />
           </RowSection>
 
-          <section id="resume" className="scroll-mt-12">
-            <h2 className="section-title mb-3 inline-flex">Resume</h2>
+          <section
+            id="resume"
+            className="flex scroll-mt-12 flex-col items-start gap-4"
+          >
+            <h2 className="section-title">Resume</h2>
             <a
               href="/assets/cv.pdf"
               download="Gurkan-Dogukan-Karakurt-CV.pdf"
