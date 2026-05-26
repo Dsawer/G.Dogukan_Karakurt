@@ -76,8 +76,8 @@ export function Sidebar() {
           </p>
         </div>
         <p className="max-w-[320px] text-[14px] leading-relaxed text-slate">
-          BIM-driven construction scheduling with graph neural networks, under
-          Prof. Dr. Rıfat Sönmez. Research interests:{" "}
+          BIM-driven construction scheduling with graph neural networks.
+          Research interests:{" "}
           <span className="text-foreground">
             {profile.researchInterests.join(", ")}
           </span>
