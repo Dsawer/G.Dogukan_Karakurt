@@ -196,8 +196,7 @@ export const skills: SkillGroup[] = [
       { label: "PostgreSQL", level: "ArrayField, JSONField, indexing" },
       { label: "JWT (SimpleJWT) + Google OAuth", level: "production auth" },
       { label: "Algorithmic trading systems", level: "scalping, swing, custom strategies" },
-      { label: "Quantitative finance", level: "strategy design, market data, backtesting" },
-      { label: "Gunicorn", level: "production deployment" }
+      { label: "Quantitative finance", level: "strategy design, market data, backtesting" }
     ]
   },
   {
