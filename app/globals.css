@@ -99,6 +99,16 @@
     box-shadow: 0 0 0 1px var(--accent-soft), 0 24px 60px -24px rgba(100, 255, 218, 0.18);
   }
 
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
   .sr-only {
     position: absolute;
     width: 1px;

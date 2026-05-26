@@ -32,9 +32,9 @@ export function Sidebar() {
   }, []);
 
   return (
-    <aside className="flex w-full flex-col gap-7 py-10 lg:sticky lg:top-0 lg:gap-7 lg:py-12">
+    <aside className="scrollbar-hide flex w-full flex-col gap-7 py-10 lg:sticky lg:top-0 lg:h-screen lg:max-h-screen lg:gap-8 lg:overflow-y-auto lg:py-14">
       <header className="flex flex-col gap-4">
-        <div className="relative h-[108px] w-[108px] shrink-0 overflow-hidden rounded-[14px] glow-portrait">
+        <div className="relative h-[112px] w-[112px] shrink-0 overflow-hidden rounded-[14px] glow-portrait">
           <Image
             src="/assets/portrait.png"
             alt={`Portrait of ${profile.name}`}
@@ -45,16 +45,24 @@ export function Sidebar() {
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <h1 className="text-balance text-[26px] font-bold leading-[1.1] tracking-[-0.02em] text-foreground">
+          <h1 className="text-balance text-[28px] font-bold leading-[1.1] tracking-[-0.02em] text-foreground">
             {profile.name}
           </h1>
-          <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-accent">
+          <p className="font-mono text-[12px] uppercase tracking-[0.16em] text-accent">
             MSc Candidate · Research Assistant
           </p>
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-dim">
+          <p className="font-mono text-[11.5px] uppercase tracking-[0.14em] text-slate-dim">
             METU Construction Engineering &amp; Management
           </p>
         </div>
+        <p className="max-w-[320px] text-[14px] leading-relaxed text-slate">
+          BIM-driven construction scheduling with graph neural networks, under
+          Prof. Dr. Rıfat Sönmez. Research interests:{" "}
+          <span className="text-foreground">
+            {profile.researchInterests.join(", ")}
+          </span>
+          .
+        </p>
       </header>
 
       <nav aria-label="Section navigation" className="hidden lg:block">
