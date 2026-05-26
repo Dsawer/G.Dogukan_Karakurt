@@ -32,9 +32,9 @@ export function Sidebar() {
   }, []);
 
   return (
-    <aside className="flex w-full flex-col gap-8 py-12 lg:sticky lg:top-0 lg:h-screen lg:max-h-screen lg:gap-10 lg:overflow-y-auto lg:py-20">
-      <header className="flex flex-col gap-5">
-        <div className="relative h-[120px] w-[120px] shrink-0 overflow-hidden rounded-[14px] glow-portrait">
+    <aside className="flex w-full flex-col gap-7 py-10 lg:sticky lg:top-0 lg:gap-7 lg:py-12">
+      <header className="flex flex-col gap-4">
+        <div className="relative h-[108px] w-[108px] shrink-0 overflow-hidden rounded-[14px] glow-portrait">
           <Image
             src="/assets/portrait.png"
             alt={`Portrait of ${profile.name}`}
@@ -44,29 +44,21 @@ export function Sidebar() {
             className="h-full w-full object-cover"
           />
         </div>
-        <div className="flex flex-col gap-2">
-          <h1 className="text-balance text-[30px] font-bold leading-tight tracking-[-0.02em] text-foreground">
+        <div className="flex flex-col gap-1.5">
+          <h1 className="text-balance text-[26px] font-bold leading-[1.1] tracking-[-0.02em] text-foreground">
             {profile.name}
           </h1>
-          <p className="font-mono text-[12.5px] uppercase tracking-[0.16em] text-accent">
+          <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-accent">
             MSc Candidate · Research Assistant
           </p>
-          <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-slate-dim">
+          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-dim">
             METU Construction Engineering &amp; Management
           </p>
         </div>
-        <p className="max-w-[320px] text-[15px] leading-relaxed text-slate">
-          BIM-driven construction scheduling with graph neural networks, under
-          Prof. Dr. Rıfat Sönmez. Research interests:{" "}
-          <span className="text-foreground">
-            {profile.researchInterests.join(", ")}
-          </span>
-          .
-        </p>
       </header>
 
       <nav aria-label="Section navigation" className="hidden lg:block">
-        <ul className="flex flex-col gap-1">
+        <ul className="flex flex-col gap-0.5">
           {navItems.map((item, idx) => {
             const isActive = activeId === item.id;
             const num = String(idx + 1).padStart(2, "0");
@@ -76,7 +68,7 @@ export function Sidebar() {
                   href={`#${item.id}`}
                   data-active={isActive ? "true" : undefined}
                   className={cn(
-                    "group flex items-center gap-3 rounded-md py-2 pl-0 pr-3 text-[14px] transition-colors",
+                    "group flex items-center gap-3 rounded-md py-1.5 pl-0 pr-3 text-[13.5px] transition-colors",
                     isActive
                       ? "text-foreground"
                       : "text-slate-dim hover:text-foreground"
@@ -104,7 +96,7 @@ export function Sidebar() {
         </ul>
       </nav>
 
-      <div className="mt-auto flex items-center gap-1">
+      <div className="mt-2 flex items-center gap-1 lg:mt-auto">
         {iconLinks.map((link) => (
           <IconLink key={link.brand} link={link} />
         ))}
