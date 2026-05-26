@@ -7,20 +7,20 @@ export function Projects() {
         <li
           key={p.title}
           className={
-            "row-hover rounded-md px-3 py-4 " +
+            "row-hover rounded-md px-3 py-5 " +
             (i > 0 ? "border-t border-border-soft" : "")
           }
         >
           <div className="flex flex-col gap-1.5">
-            <h3 className="text-[15px] font-semibold leading-snug text-foreground">
+            <h3 className="text-[17px] font-semibold leading-snug text-foreground">
               {p.title} <span className="text-slate-dim">— {p.tagline}</span>
             </h3>
-            <p className="font-mono text-[10.5px] uppercase tracking-widest text-slate-dim">
+            <p className="font-mono text-[11.5px] uppercase tracking-widest text-slate-dim">
               {p.meta}
             </p>
-            <p className="text-[13px] leading-relaxed text-slate">{p.blurb}</p>
-            <p className="mt-1 text-[12.5px] leading-relaxed text-slate-dim">
-              <span className="font-mono text-[10px] uppercase tracking-widest text-accent">
+            <p className="text-[14.5px] leading-relaxed text-slate">{p.blurb}</p>
+            <p className="mt-1 text-[13.5px] leading-relaxed text-slate-dim">
+              <span className="font-mono text-[11px] uppercase tracking-widest text-accent">
                 Stack
               </span>{" "}
               · {p.stack}

@@ -1,9 +1,9 @@
 import { skills } from "@/lib/content";
 
 const SHORT_LABELS: Record<string, string> = {
+  "Research & Engineering": "Research",
   "Software Development": "Software",
-  "Civil Engineering": "Civil Eng",
-  "Graphic Design": "Design",
+  Design: "Design",
   Languages: "Languages"
 };
 
@@ -13,12 +13,12 @@ export function SkillLines() {
       {skills.map((group) => (
         <li
           key={group.name}
-          className="grid gap-1 border-b border-border-soft py-4 last:border-b-0 lg:grid-cols-[120px_1fr] lg:gap-6"
+          className="grid gap-1 border-b border-border-soft py-5 last:border-b-0 lg:grid-cols-[140px_1fr] lg:gap-6"
         >
-          <span className="font-mono text-[10.5px] uppercase tracking-widest text-accent">
+          <span className="font-mono text-[12px] uppercase tracking-widest text-accent">
             {SHORT_LABELS[group.name] ?? group.name}
           </span>
-          <p className="text-[13px] leading-relaxed text-slate">
+          <p className="text-[14.5px] leading-relaxed text-slate">
             {group.pills.map((p, i) => (
               <span key={p.label}>
                 <span className="text-foreground">{p.label}</span>

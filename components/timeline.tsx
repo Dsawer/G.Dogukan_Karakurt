@@ -6,17 +6,17 @@ export function Timeline({ data }: { data: readonly Entry[] }) {
       {data.map((entry) => (
         <li
           key={`${entry.period}-${entry.title}`}
-          className="row-hover grid gap-1.5 rounded-md px-3 py-3 lg:grid-cols-[125px_1fr] lg:gap-6"
+          className="row-hover grid gap-1.5 rounded-md px-3 py-4 lg:grid-cols-[140px_1fr] lg:gap-6"
         >
-          <span className="pt-0.5 font-mono text-[10.5px] uppercase tracking-widest text-slate-dim">
+          <span className="pt-0.5 font-mono text-[11.5px] uppercase tracking-widest text-slate-dim">
             {entry.period}
           </span>
           <div>
-            <h3 className="text-[14.5px] font-semibold leading-snug text-foreground">
+            <h3 className="text-[16px] font-semibold leading-snug text-foreground">
               {entry.title}
             </h3>
-            <p className="mt-0.5 text-[13px] text-slate">{entry.org}</p>
-            <p className="mt-2 text-[13.5px] leading-relaxed text-slate">
+            <p className="mt-1 text-[14px] text-slate">{entry.org}</p>
+            <p className="mt-2 text-[14.5px] leading-relaxed text-slate">
               {entry.detail}
             </p>
           </div>

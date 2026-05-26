@@ -34,7 +34,7 @@ export default function HomePage() {
 
         <main id="main" className="flex flex-col gap-16 py-12 lg:py-24">
           <RowSection id="about" title="About">
-            <div className="space-y-4 text-[14px] leading-relaxed text-slate lg:text-[14.5px]">
+            <div className="space-y-4 text-[15.5px] leading-relaxed text-slate lg:text-[16px]">
               {profile.about.map((para, i) => (
                 <p key={i}>{para}</p>
               ))}
@@ -63,7 +63,7 @@ export default function HomePage() {
 
           <RowSection id="resume" title="Resume">
             <div className="space-y-4">
-              <p className="text-[14px] leading-relaxed text-slate">
+              <p className="text-[15.5px] leading-relaxed text-slate">
                 A printable English copy of my CV is available as a PDF. The
                 content above is the canonical version of the same résumé.
               </p>
@@ -71,27 +71,27 @@ export default function HomePage() {
                 <a
                   href="/assets/cv.pdf"
                   download="Gurkan-Dogukan-Karakurt-CV.pdf"
-                  className={cn(buttonVariants({ variant: "default", size: "md" }))}
+                  className={cn(buttonVariants({ variant: "default", size: "lg" }))}
                 >
-                  <Download className="h-3.5 w-3.5" />
+                  <Download className="h-4 w-4" />
                   Download CV (PDF)
                 </a>
                 <Link
                   href="/cv"
-                  className={cn(buttonVariants({ variant: "outline", size: "md" }))}
+                  className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
                 >
-                  <FileText className="h-3.5 w-3.5" />
+                  <FileText className="h-4 w-4" />
                   View printable version
                 </Link>
               </div>
-              <p className="text-[12px] text-slate-dim">
+              <p className="text-[13px] text-slate-dim">
                 Personal contact details are intentionally omitted for privacy.
                 Reach out via LinkedIn for academic correspondence.
               </p>
             </div>
           </RowSection>
 
-          <footer className="border-t border-border-soft pt-6 text-[11.5px] text-slate-dim">
+          <footer className="border-t border-border-soft pt-6 text-[12.5px] text-slate-dim">
             © {new Date().getFullYear()} {profile.name}. Built with Next.js +
             Tailwind. Deployed on Vercel.
           </footer>

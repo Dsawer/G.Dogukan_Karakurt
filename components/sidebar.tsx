@@ -45,17 +45,17 @@ export function Sidebar() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <h1 className="text-balance text-[26px] font-bold leading-tight tracking-[-0.02em] text-foreground">
+          <h1 className="text-balance text-[30px] font-bold leading-tight tracking-[-0.02em] text-foreground">
             {profile.name}
           </h1>
-          <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent">
+          <p className="font-mono text-[12.5px] uppercase tracking-[0.16em] text-accent">
             MSc Candidate · Research Assistant
           </p>
-          <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-slate-dim">
+          <p className="font-mono text-[12px] uppercase tracking-[0.14em] text-slate-dim">
             METU Construction Engineering &amp; Management
           </p>
         </div>
-        <p className="max-w-[300px] text-[13.5px] leading-relaxed text-slate">
+        <p className="max-w-[320px] text-[15px] leading-relaxed text-slate">
           BIM-driven construction scheduling with graph neural networks, under
           Prof. Dr. Rıfat Sönmez. Research interests:{" "}
           <span className="text-foreground">
@@ -76,7 +76,7 @@ export function Sidebar() {
                   href={`#${item.id}`}
                   data-active={isActive ? "true" : undefined}
                   className={cn(
-                    "group flex items-center gap-3 rounded-md py-1.5 pl-0 pr-3 text-[13px] transition-colors",
+                    "group flex items-center gap-3 rounded-md py-2 pl-0 pr-3 text-[14px] transition-colors",
                     isActive
                       ? "text-foreground"
                       : "text-slate-dim hover:text-foreground"
@@ -91,7 +91,7 @@ export function Sidebar() {
                     )}
                     aria-hidden="true"
                   />
-                  <span className="font-mono text-[10px] uppercase tracking-widest">
+                  <span className="font-mono text-[11.5px] uppercase tracking-widest">
                     {num}
                   </span>
                   <span className="font-medium uppercase tracking-[0.14em]">
@@ -111,7 +111,7 @@ export function Sidebar() {
         <a
           href="/assets/cv.pdf"
           download="Gurkan-Dogukan-Karakurt-CV.pdf"
-          className="ml-2 inline-flex items-center gap-1.5 rounded border border-border px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-accent transition-colors hover:bg-[color:var(--accent-soft)]"
+          className="ml-2 inline-flex items-center gap-1.5 rounded border border-border px-3 py-1.5 font-mono text-[11.5px] uppercase tracking-widest text-accent transition-colors hover:bg-[color:var(--accent-soft)]"
           aria-label="Download CV PDF"
         >
           CV ↓
