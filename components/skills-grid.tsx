@@ -31,7 +31,7 @@ export function SkillLines() {
                 <span>
                   <span className="text-foreground">{p.label}</span>
                   {p.level && (
-                    <span className="text-slate-dim"> — {p.level}</span>
+                    <span className="text-slate-dim"> ({p.level})</span>
                   )}
                 </span>
               </li>
