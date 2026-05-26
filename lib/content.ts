@@ -67,40 +67,35 @@ export const iconLinks: IconLink[] = [
 export const research = {
   title:
     "Predicting Construction Precedence Relationships from BIM Geometry with Machine Learning",
-  programme: "MSc Thesis · Construction Engineering & Management",
-  supervisor: "Prof. Dr. Rıfat Sönmez",
-  course: "CE 520 — Graduate Seminar, Spring 2026",
-  presentedOn: "Presented 12 May 2026 at METU",
   pitch:
-    "Construction megaprojects miss budget 98 % of the time, largely because BIM and the construction schedule still do not talk to each other. This thesis closes that loop: given a BIM model with assigned OmniClass activities, a graph neural network predicts the entire FS, SS, FF, SF precedence network — regenerating schedules from the model on every design change.",
+    "I am building a graph neural network that reads a BIM model with assigned OmniClass activities and outputs the full construction schedule — every FS, SS, FF, SF precedence link — so that schedules regenerate themselves whenever the design changes.",
   sections: [
     {
       label: "Problem",
       body:
-        "The 4D BIM loop is broken: schedule logic is not derived from the model itself. Planners rebuild precedence by hand from drawings for each project. Recent text-based approaches (e.g. Amer, Jung & Golparvar-Fard, 2023, ILC) reach F1 91 % on activity pairs, but ignore geometry, hit token-window limits at real project scale, and produce loops and broken links."
+        "BIM and the construction schedule still do not talk to each other. Planners rebuild precedence by hand for every project, and recent text-only ML approaches ignore geometry and break down at real project scale."
     },
     {
       label: "Approach",
       body:
-        "A single graph neural network (GraphSAGE / GAT) consumes a three-layer IFC representation: native IFC class and geometry, Uniformat II classification, and OmniClass T22 activities. Message passing over BIM topology — adjacency, support, containment — yields probabilities for every candidate FS / SS / FF / SF link in the schedule. Standardized vocabularies replace free-form text and avoid LLM hallucinations."
+        "A single GNN (GraphSAGE / GAT) consumes a three-layer IFC representation — native IFC class and geometry, Uniformat II, and OmniClass T22 — and passes messages over BIM topology to score every candidate precedence link in the schedule."
     },
     {
       label: "Contribution",
       body:
-        "First end-to-end whole-schedule precedence predictor that grounds directly in BIM topology and standardized classification codes, instead of free-form activity text. Designed for transfer across firms and projects, with a roadmap to a defense in December 2027."
+        "First end-to-end whole-schedule precedence predictor grounded in BIM topology and standardized classification codes instead of free-form activity text. Designed to transfer across firms and projects."
     }
   ],
   images: [
     {
       src: "/assets/thesis-bim.jpg",
       alt: "BIM model cutaway of a multi-storey reinforced-concrete building with mechanical systems exposed",
-      caption: "BIM model — geometry, topology, and classification feed the GNN."
+      caption: "Geometry, topology, and classification feed the network."
     },
     {
       src: "/assets/thesis-gnn.png",
       alt: "Graph Neural Network architecture: input graph, graph convolution layers, regularization, output probabilities of links between nodes",
-      caption:
-        "Graph neural network — nodes are BIM elements, edges are precedence candidates."
+      caption: "Nodes are BIM elements; edges are precedence candidates."
     }
   ]
 } as const;

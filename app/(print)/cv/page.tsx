@@ -139,12 +139,7 @@ export default function CvPrintPage() {
         <section className="cv-section">
           <h2>Research</h2>
           <div className="cv-thesis">
-            <p className="programme">{research.programme}</p>
             <h3>{research.title}</h3>
-            <p className="meta">
-              Supervisor: {research.supervisor} · {research.course} ·{" "}
-              {research.presentedOn}
-            </p>
             <p>{research.pitch}</p>
             {research.sections.map((s) => (
               <div key={s.label}>

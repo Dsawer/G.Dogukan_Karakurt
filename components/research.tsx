@@ -4,16 +4,10 @@ import { research } from "@/lib/content";
 export function Research() {
   return (
     <article className="overflow-hidden rounded-lg border border-border-soft bg-[color:var(--surface)]/40 shadow-[inset_3px_0_0_var(--accent)]">
-      <header className="space-y-2.5 px-6 pt-6">
-        <p className="font-mono text-[11.5px] uppercase tracking-widest text-accent">
-          {research.programme}
-        </p>
+      <header className="px-6 pt-6">
         <h3 className="text-balance text-[22px] font-bold leading-snug tracking-tight text-foreground">
           {research.title}
         </h3>
-        <p className="font-mono text-[11.5px] uppercase tracking-widest text-slate-dim">
-          Supervisor: {research.supervisor}  ·  {research.course}  ·  {research.presentedOn}
-        </p>
       </header>
 
       <div className="space-y-6 px-6 py-6">
@@ -31,7 +25,7 @@ export function Research() {
             sizes="(min-width: 1024px) 600px, 100vw"
           />
           <figcaption className="border-t border-border-soft bg-[color:var(--background)]/40 px-3 py-2 font-mono text-[11px] uppercase tracking-widest text-slate-dim">
-            Fig 1 — {research.images[0].caption}
+            {research.images[0].caption}
           </figcaption>
         </figure>
 
@@ -59,7 +53,7 @@ export function Research() {
             sizes="(min-width: 1024px) 600px, 100vw"
           />
           <figcaption className="border-t border-border-soft bg-[color:var(--background)]/40 px-3 py-2 font-mono text-[11px] uppercase tracking-widest text-slate-dim">
-            Fig 2 — {research.images[1].caption}
+            {research.images[1].caption}
           </figcaption>
         </figure>
       </div>
