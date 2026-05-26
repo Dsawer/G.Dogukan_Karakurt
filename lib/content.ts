@@ -35,14 +35,14 @@ export type SkillGroup = {
 
 export const profile = {
   name: "Gürkan Doğukan Karakurt",
-  roles: ["Graduate Researcher", "Civil Engineer", "Software Developer"],
+  roles: ["MSc Candidate", "Research Assistant"],
   headline:
-    "MSc Candidate, Construction Engineering & Management at METU",
+    "MSc Candidate & Research Assistant, Construction Engineering & Management at METU",
   eyebrow: "METU · Construction Engineering & Management",
   about: [
-    "I am an MSc candidate and Research Assistant in Construction Engineering & Management at Middle East Technical University, supervised by Prof. Dr. Rıfat Sönmez. My research uses graph neural networks to predict construction schedules from BIM models, so the schedule can be regenerated whenever the design changes.",
-    "I hold a BSc in Civil Engineering from METU and a minor in Corporate Finance. My current research interests are BIM, graph neural networks, construction scheduling, and machine learning for the built environment.",
-    "Outside the lab I work on full-stack software (Python, Django, React, React Native) and financial systems. I led Vortex's quantitative strategy team in 2023–2024, building algorithmic trading bots, and earlier I built my own web-based trading interface from scratch. On the side I take on occasional freelance graphic design work."
+    "MSc candidate and Research Assistant in Construction Engineering and Management at Middle East Technical University. Building on my foundation as a Civil Engineer, my core expertise lies at the intersection of Artificial Intelligence and the built environment. I actively research and develop advanced machine learning models to predict and automate construction schedules directly from BIM topology.",
+    "Previously, as a Software Engineer at Mega Mühendislik, I built custom automation tools and software to optimize civil engineering operations and drive digital transformation in construction workflows.",
+    "Beyond my primary academic and engineering focus, I possess a versatile background as a full stack developer and designer. I have briefly contributed to a select number of external software initiatives, ranging from quantitative algorithmic trading systems at Vortex to serving as the technical lead for an AI powered wellness application. Ultimately, I consistently bridge the gap between complex civil engineering research and practical application by engineering scalable software architectures."
   ],
   researchInterests: [
     "BIM",
@@ -90,26 +90,25 @@ export const research = {
 
 export const education: Entry[] = [
   {
-    period: "2025 — Present",
-    title: "MSc, Construction Engineering & Management",
-    org: "Middle East Technical University (METU), Ankara",
+    period: "2025 — Ongoing",
+    title: "Master's in Construction Management",
+    org: "Orta Doğu Teknik Üniversitesi (METU)",
     detail:
-      "Research Assistant. Thesis on BIM-driven scheduling with graph neural networks, supervised by Prof. Dr. Rıfat Sönmez. Transferred from the Geotechnical Engineering programme in Spring 2025.",
+      "Research Assistant. Thesis on machine learning models that predict and automate construction schedules directly from BIM topology, supervised by Prof. Dr. Rıfat Sönmez.",
     icon: "graduation"
   },
   {
     period: "2017 — 2023",
-    title: "BSc, Civil Engineering",
-    org: "Middle East Technical University (METU), GPA 3.35 / 4.00",
+    title: "Civil Engineering",
+    org: "Orta Doğu Teknik Üniversitesi (METU), GPA 3.35 / 4.00",
     detail:
-      "Coursework in structural analysis, geotechnics, hydraulics, construction management, and Building Information Modeling."
-    ,
+      "Coursework in structural analysis, geotechnics, hydraulics, construction management, and Building Information Modeling.",
     icon: "hardhat"
   },
   {
     period: "2019 — 2023",
-    title: "Minor, Corporate Finance",
-    org: "Middle East Technical University (METU), GPA 3.39 / 4.00",
+    title: "Corporate Finance (Minor Program)",
+    org: "Orta Doğu Teknik Üniversitesi (METU), GPA 3.39 / 4.00",
     detail:
       "Minor programme covering financial analysis, valuation, and quantitative methods alongside the civil engineering degree.",
     icon: "finance"
@@ -120,96 +119,72 @@ export const experience: Entry[] = [
   {
     period: "Oct 2025 — Present",
     title: "Research Assistant",
-    org: "METU · Construction Engineering & Management, Department of Civil Engineering",
+    org: "Middle East Technical University · Ankara",
     detail:
-      "Graduate research and teaching support in the Construction Engineering and Management division. Working on BIM, graph neural networks for construction scheduling, and machine learning for the built environment.",
+      "I conduct graduate research in Construction Engineering and Management under the supervision of Prof. Dr. Rıfat Sönmez. My research focuses on developing machine learning models to predict and automate construction schedules directly from BIM topology. Additionally, I serve as a teaching assistant for departmental courses, where I provide academic support, prepare course materials, and facilitate student learning within the civil engineering program.",
     icon: "research"
   },
   {
     period: "Dec 2024 — Oct 2025",
-    title: "Software Engineer",
-    org: "Mega Mühendislik, Türkiye",
+    title: "Software Engineer (Construction Tech.)",
+    org: "Mega Mühendislik Müşavirlik A.Ş. · Ankara",
     detail:
-      "Built internal software and engineering tooling across the stack before moving full-time into graduate research at METU.",
+      "Worked on the digital transformation of construction workflows by building internal automation tools and custom software for engineering operations. Focused on data structuring, process optimization, and technical problem-solving for civil engineering applications.",
     icon: "code"
   },
   {
-    period: "2023 — Present",
-    title: "Founder & Full-Stack Developer",
-    org: "Diyet Cebimde · AI-assisted diet & nutrition platform",
+    period: "Jan 2025 — Aug 2025",
+    title: "Lead Frontend Designer",
+    org: "Global Crypto Exchange (Stealth) · Remote",
     detail:
-      "Solo-built mobile platform that generates AI-driven weekly diet plans from each user's profile and goals, with photo-based meal recognition, manual tracking, weight and measurement logging, and a memory-equipped chatbot. Hybrid pipeline (Gemini for meal selection, PuLP linear programming for portion optimisation) and snapshot architecture keep historical plans stable across catalog updates. Three repositories: Django + DRF + PostgreSQL backend, React 18 + Vite admin panel, Expo + React Native mobile client.",
-    icon: "mobile"
+      "Spearheaded the design and implementation of the core trading interface for a pre-launch global crypto exchange. Responsible for responsive architecture, performance optimization, and UX/UI systems that adapt across devices. Technologies include React, TypeScript, Tailwind, and WebSocket-based live data feeds.",
+    icon: "code"
   },
   {
     period: "2023 — 2024",
     title: "Head of Quantitative Strategies",
-    org: "Vortex · Remote (Georgia)",
+    org: "Vortex Foundation · Remote",
     detail:
-      "Built algorithmic trading bots for financial markets, including scalping and swing strategies, performance tuning, and per-investor strategy customisation. Owned the full pipeline from market-data ingestion through backtesting to live deployment.",
+      "Led the design, development, and deployment of algorithmic trading bots for hedge fund and retail-level use cases. Delivered strategies based on user-specific risk appetites, including scalping, swing, and long-term investment models. Built fully autonomous bots with live market execution and order book integration. Also developed custom market making algorithms for liquidity optimization on multiple exchanges.",
     icon: "trading"
   },
   {
-    period: "2021 — 2024",
-    title: "Web Development Project Lead (Self-Initiated)",
-    org: "Independent · Finance & trading interfaces",
+    period: "2023 — Present",
+    title: "Co-Founder & Full Stack Developer",
+    org: "Diyet Cebimde · AI-assisted wellness & diet platform",
     detail:
-      "Built a web-based trading interface for financial markets and ran several smaller finance-side projects in parallel. Picked the stack, owned product decisions, and shipped each iteration to production myself.",
-    icon: "trading"
-  },
-  {
-    period: "Summer 2022",
-    title: "Civil Engineering Intern",
-    org: "ES Group, Erdemir Port Project, Zonguldak",
-    detail:
-      "Worked across site operations, planning, and progress payments on a port construction project. Contributed to steel-pile design and took responsibility in cost control and project scheduling.",
-    icon: "hardhat"
-  },
+      "I architected and developed an AI assisted wellness and diet generation platform in collaboration with my wife, Dietitian Melisa Karakurt. Designed specifically to digitize and scale her professional dietary practice, I built the entire technical infrastructure from the ground up featuring both web and mobile clients. I engineered a hybrid pipeline that integrates the Gemini API for intelligent meal selection and PuLP linear programming for precise portion optimization. The robust backend architecture is built using Python, Django REST Framework, and PostgreSQL, while the admin panel and cross platform mobile client were designed using React 18 and React Native with Expo.",
+    icon: "mobile"
+  }
 ];
 
 export const skills: SkillGroup[] = [
   {
-    name: "Research & Engineering",
+    name: "Software Developer",
     pills: [
-      { label: "BIM", level: "Revit, IFC" },
-      { label: "Construction Management", level: "scheduling, CPM" },
-      { label: "Machine Learning", level: "PyTorch, GNN (GraphSAGE / GAT)" },
-      { label: "Optimization", level: "Linear Programming, PuLP" },
-      { label: "AutoCAD", level: "upper-intermediate" },
-      { label: "MS Project", level: "intermediate" },
-      { label: "MATLAB / Visual Basic", level: "advanced" }
+      { label: "Python & Django" },
+      { label: "Web Dev (HTML, CSS, JS)" },
+      { label: "React, Tailwind" },
+      { label: "React Native (Mobile)" },
+      { label: "PostgreSQL" },
+      { label: "MATLAB, VBA" },
+      { label: "Algorithmic Trading Development" }
     ]
   },
   {
-    name: "Backend & Data",
+    name: "Civil Engineer",
     pills: [
-      { label: "Python", level: "advanced" },
-      { label: "Django + Django REST Framework", level: "advanced" },
-      { label: "PostgreSQL", level: "ArrayField, JSONField, indexing" },
-      { label: "JWT (SimpleJWT) + Google OAuth", level: "production auth" },
-      { label: "Algorithmic trading systems", level: "scalping, swing, custom strategies" },
-      { label: "Quantitative finance", level: "strategy design, market data, backtesting" }
-    ]
-  },
-  {
-    name: "Frontend & Mobile",
-    pills: [
-      { label: "TypeScript", level: "advanced" },
-      { label: "React", level: "advanced" },
-      { label: "Next.js (App Router)", level: "advanced" },
-      { label: "React Native + Expo", level: "advanced, EAS Build" },
-      { label: "Tailwind CSS + NativeWind", level: "advanced" },
-      { label: "React Query + Zustand", level: "state management" },
-      { label: "Vite, Vercel, Railway", level: "build & deploy" },
-      { label: "HTML / CSS / JavaScript", level: "advanced" }
+      { label: "Construction Software Automation" },
+      { label: "AutoCAD" },
+      { label: "Excel + Visual Basic" },
+      { label: "Revit" },
+      { label: "Navisworks" },
+      { label: "MS Project" }
     ]
   },
   {
     name: "Languages",
-    pills: [
-      { label: "Turkish", level: "native" },
-      { label: "English", level: "C1" }
-    ]
+    pills: [{ label: "Turkish" }, { label: "English (C1)" }]
   }
 ];
 

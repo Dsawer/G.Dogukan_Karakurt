@@ -45,3 +45,6 @@ _seminar_extract
 # user screenshots (not for the repo)
 Ads*.png
 *.screenshot.png
+
+# canonical resume source — copied to public/assets/cv.pdf, not tracked separately
+Gürkan_Doğukan_Karakurt_Resume.pdf

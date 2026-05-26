@@ -1,10 +1,8 @@
 import { skills } from "@/lib/content";
 
 const SHORT_LABELS: Record<string, string> = {
-  "Research & Engineering": "Research",
-  "Backend & Data": "Backend",
-  "Frontend & Mobile": "Frontend",
-  Design: "Design",
+  "Software Developer": "Software",
+  "Civil Engineer": "Civil",
   Languages: "Languages"
 };
 
