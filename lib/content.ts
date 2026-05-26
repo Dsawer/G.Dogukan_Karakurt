@@ -75,13 +75,15 @@ export const research = {
   images: [
     {
       src: "/assets/thesis-bim.jpg",
+      href: "https://ifcopenshell.org/",
       alt: "BIM model cutaway of a multi-storey reinforced-concrete building with mechanical systems exposed",
-      caption: "Geometry, topology, and classification feed the network."
+      caption: "Input — the BIM model the network reads."
     },
     {
-      src: "/assets/thesis-gnn.png",
-      alt: "Graph Neural Network architecture: input graph, graph convolution layers, regularization, output probabilities of links between nodes",
-      caption: "Nodes are BIM elements; edges are precedence candidates."
+      src: "/assets/thesis-cpm.png",
+      href: "https://en.wikipedia.org/wiki/Critical_path_method",
+      alt: "Critical Path Method activity network with the critical path highlighted in red",
+      caption: "Output — the precedence network the model predicts."
     }
   ]
 } as const;
