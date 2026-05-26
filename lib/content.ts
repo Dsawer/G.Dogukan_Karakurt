@@ -75,15 +75,15 @@ export const research = {
   images: [
     {
       src: "/assets/thesis-bim.jpg",
-      href: "https://ifcopenshell.org/",
-      alt: "BIM model cutaway of a multi-storey reinforced-concrete building with mechanical systems exposed",
-      caption: "Input — the BIM model the network reads."
+      href: "https://en.wikipedia.org/wiki/Building_information_modeling",
+      alt: "BIM model of a multi-storey building",
+      caption: "BIM model — what the network reads."
     },
     {
-      src: "/assets/thesis-cpm.png",
-      href: "https://en.wikipedia.org/wiki/Critical_path_method",
-      alt: "Critical Path Method activity network with the critical path highlighted in red",
-      caption: "Output — the precedence network the model predicts."
+      src: "/assets/thesis-schedule.jpg",
+      href: "https://en.wikipedia.org/wiki/Gantt_chart",
+      alt: "Primavera P6 construction schedule with linked activities",
+      caption: "Construction schedule — what the network predicts."
     }
   ]
 } as const;
