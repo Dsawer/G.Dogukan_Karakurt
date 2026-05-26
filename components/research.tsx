@@ -34,14 +34,13 @@ export function Research() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${image.caption} — opens reference in a new tab`}
-              className="relative block bg-white"
+              className="relative block aspect-[16/10] overflow-hidden bg-white"
             >
               <Image
                 src={image.src}
                 alt={image.alt}
-                width={1600}
-                height={900}
-                className="h-auto w-full object-contain transition-opacity duration-200 group-hover:opacity-90"
+                fill
+                className="object-cover transition-opacity duration-200 group-hover:opacity-90"
                 sizes="(min-width: 768px) 320px, 100vw"
               />
               <span className="pointer-events-none absolute right-2 top-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-[color:var(--background)]/85 text-accent opacity-0 transition-opacity duration-200 group-hover:opacity-100">

@@ -171,23 +171,38 @@ export const skills: SkillGroup[] = [
     name: "Research & Engineering",
     pills: [
       { label: "BIM", level: "Revit, IFC" },
-      { label: "Construction Mgmt", level: "scheduling, CPM" },
-      { label: "Graph Neural Networks", level: "GraphSAGE / GAT" },
-      { label: "Machine Learning", level: "PyTorch" },
+      { label: "Construction Management", level: "scheduling, CPM" },
+      { label: "Machine Learning", level: "PyTorch, GNN (GraphSAGE / GAT)" },
+      { label: "Optimization", level: "Linear Programming (PuLP)" },
       { label: "AutoCAD", level: "upper-intermediate" },
-      { label: "SAP2000", level: "beginner-intermediate" },
       { label: "EPANET", level: "advanced" },
-      { label: "MS Project", level: "intermediate" }
+      { label: "SAP2000", level: "beginner-intermediate" },
+      { label: "MS Project", level: "intermediate" },
+      { label: "MATLAB / Visual Basic", level: "advanced" }
     ]
   },
   {
-    name: "Software Development",
+    name: "Backend & Data",
     pills: [
-      { label: "Python & Django", level: "advanced" },
-      { label: "HTML / CSS / JS", level: "advanced" },
-      { label: "React", level: "intermediate" },
-      { label: "PostgreSQL", level: "intermediate" },
-      { label: "MATLAB / VBA", level: "advanced" }
+      { label: "Python", level: "advanced" },
+      { label: "Django + Django REST Framework", level: "advanced" },
+      { label: "PostgreSQL", level: "ArrayField, JSONField" },
+      { label: "JWT (SimpleJWT) + Google OAuth", level: "production auth" },
+      { label: "Google Gemini API", level: "production integration" },
+      { label: "Gunicorn", level: "production deployment" }
+    ]
+  },
+  {
+    name: "Frontend & Mobile",
+    pills: [
+      { label: "TypeScript", level: "advanced" },
+      { label: "React", level: "advanced" },
+      { label: "Next.js (App Router)", level: "advanced" },
+      { label: "React Native + Expo", level: "advanced (EAS Build)" },
+      { label: "Tailwind CSS + NativeWind", level: "advanced" },
+      { label: "React Query + Zustand", level: "state management" },
+      { label: "Vite, Vercel, Railway", level: "build & deploy" },
+      { label: "HTML / CSS / JavaScript", level: "advanced" }
     ]
   },
   {
