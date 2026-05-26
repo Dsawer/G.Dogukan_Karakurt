@@ -42,7 +42,7 @@ export const profile = {
   about: [
     "I am an MSc candidate and Research Assistant in Construction Engineering & Management at Middle East Technical University, supervised by Prof. Dr. Rıfat Sönmez. My research applies graph neural networks to BIM models, with the goal of generating complete construction precedence schedules directly from a building's geometry and standardized activity classifications.",
     "I hold a BSc in Civil Engineering from METU and a minor in Corporate Finance. That mix lets me look at construction projects both as engineering systems and as cost-driven programmes. My current research interests are BIM, graph neural networks, construction scheduling, and machine learning for the built environment.",
-    "Outside the lab I write full-stack software in Python, Django, React, and React Native, and I work on financial systems. I led the quantitative strategy team at Vortex in 2023–2024, designing algorithmic trading bots for scalping and swing strategies, and earlier I built a self-initiated web-based trading interface end to end. I also work as a freelance graphic designer and led the visual design of a 2024 Turkish mayoral campaign."
+    "Outside the lab I write full-stack software in Python, Django, React, and React Native, and I work on financial systems. I led the quantitative strategy team at Vortex in 2023–2024, designing algorithmic trading bots for scalping and swing strategies, and earlier I built a self-initiated web-based trading interface end to end. On the side I take on occasional freelance graphic design work."
   ],
   researchInterests: [
     "BIM",
@@ -165,14 +165,6 @@ export const experience: Entry[] = [
       "Worked across site operations, planning, and progress payments on a port construction project. Contributed to steel-pile design and took responsibility in cost control and project scheduling.",
     icon: "hardhat"
   },
-  {
-    period: "2020 — 2024",
-    title: "Freelance Graphic Designer · 2024 Local Elections Lead Designer",
-    org: "Independent",
-    detail:
-      "Delivered posters, brochures, social media content, and campaign materials across freelance projects. Served as lead designer for a 2024 Turkish mayoral campaign and owned the full digital content production pipeline.",
-    icon: "design"
-  }
 ];
 
 export const skills: SkillGroup[] = [
@@ -210,15 +202,6 @@ export const skills: SkillGroup[] = [
       { label: "React Query + Zustand", level: "state management" },
       { label: "Vite, Vercel, Railway", level: "build & deploy" },
       { label: "HTML / CSS / JavaScript", level: "advanced" }
-    ]
-  },
-  {
-    name: "Design",
-    pills: [
-      { label: "Photoshop", level: "advanced" },
-      { label: "Illustrator", level: "advanced" },
-      { label: "Premiere Pro", level: "advanced" },
-      { label: "After Effects", level: "intermediate" }
     ]
   },
   {

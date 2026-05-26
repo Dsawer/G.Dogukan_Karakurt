@@ -70,9 +70,9 @@
 
   .section-title {
     font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-    font-size: 12.5px;
+    font-size: 15px;
     font-weight: 600;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--accent);
   }
