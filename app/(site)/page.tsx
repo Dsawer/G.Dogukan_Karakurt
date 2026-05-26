@@ -55,7 +55,8 @@ export default function HomePage() {
             <SkillLines />
           </RowSection>
 
-          <RowSection id="resume" title="Resume">
+          <section id="resume" className="scroll-mt-12">
+            <h2 className="section-title mb-3 inline-flex">Resume</h2>
             <a
               href="/assets/cv.pdf"
               download="Gurkan-Dogukan-Karakurt-CV.pdf"
@@ -64,7 +65,7 @@ export default function HomePage() {
               <Download className="h-4 w-4" />
               Download CV (PDF)
             </a>
-          </RowSection>
+          </section>
 
           <footer className="border-t border-border-soft pt-6 text-[12.5px] text-slate-dim">
             © {new Date().getFullYear()} {profile.name}. Built with Next.js +

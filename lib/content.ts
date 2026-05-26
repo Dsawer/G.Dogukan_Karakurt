@@ -40,9 +40,9 @@ export const profile = {
     "MSc Candidate, Construction Engineering & Management at METU",
   eyebrow: "METU · Construction Engineering & Management",
   about: [
-    "I am an MSc candidate and Research Assistant in Construction Engineering & Management at Middle East Technical University, supervised by Prof. Dr. Rıfat Sönmez. My research applies graph neural networks to BIM models, with the goal of generating complete construction precedence schedules directly from a building's geometry and standardized activity classifications.",
-    "I hold a BSc in Civil Engineering from METU and a minor in Corporate Finance. That mix lets me look at construction projects both as engineering systems and as cost-driven programmes. My current research interests are BIM, graph neural networks, construction scheduling, and machine learning for the built environment.",
-    "Outside the lab I write full-stack software in Python, Django, React, and React Native, and I work on financial systems. I led the quantitative strategy team at Vortex in 2023–2024, designing algorithmic trading bots for scalping and swing strategies, and earlier I built a self-initiated web-based trading interface end to end. On the side I take on occasional freelance graphic design work."
+    "I am an MSc candidate and Research Assistant in Construction Engineering & Management at Middle East Technical University, supervised by Prof. Dr. Rıfat Sönmez. My research uses graph neural networks to predict construction schedules from BIM models, so the schedule can be regenerated whenever the design changes.",
+    "I hold a BSc in Civil Engineering from METU and a minor in Corporate Finance. My current research interests are BIM, graph neural networks, construction scheduling, and machine learning for the built environment.",
+    "Outside the lab I work on full-stack software (Python, Django, React, React Native) and financial systems. I led Vortex's quantitative strategy team in 2023–2024, building algorithmic trading bots, and earlier I built my own web-based trading interface from scratch. On the side I take on occasional freelance graphic design work."
   ],
   researchInterests: [
     "BIM",
@@ -70,7 +70,7 @@ export const research = {
   paragraphs: [
     "I am building a graph neural network that reads a BIM model and outputs the full construction schedule. The network predicts every FS, SS, FF, SF precedence link, so the schedule regenerates from the model whenever the design changes.",
     "BIM and the construction schedule still do not talk to each other; planners rebuild precedence by hand for every project. The model treats the BIM as a graph: nodes are building elements with their IFC class, geometry, and standardized activity codes (Uniformat II, OmniClass T22); edges encode topology like adjacency, support, and containment. Message passing across that graph scores every candidate precedence link, replacing free-form activity text with standardized vocabularies.",
-    "The novel piece is grounding precedence prediction directly in BIM topology and standardized classification codes (IFC, Uniformat II, OmniClass) instead of free-form activity text. That is what lets the model transfer across firms and projects rather than overfit a single dataset."
+    "What is new is that precedence prediction is grounded directly in BIM topology and standardized classification codes (IFC, Uniformat II, OmniClass) rather than free-form activity text, so the model can transfer across firms and projects instead of overfitting a single dataset."
   ],
   images: [
     {
@@ -122,7 +122,7 @@ export const experience: Entry[] = [
     title: "Research Assistant",
     org: "METU · Construction Engineering & Management, Department of Civil Engineering",
     detail:
-      "Graduate research and teaching support within the Construction Engineering and Management division. Focus areas include BIM, graph neural networks for construction scheduling, and machine learning applied to the built environment.",
+      "Graduate research and teaching support in the Construction Engineering and Management division. Working on BIM, graph neural networks for construction scheduling, and machine learning for the built environment.",
     icon: "research"
   },
   {
@@ -130,7 +130,7 @@ export const experience: Entry[] = [
     title: "Software Engineer",
     org: "Mega Mühendislik, Türkiye",
     detail:
-      "Built software for engineering workflows, contributing across the stack to ship reliable internal tooling before moving full-time into graduate research at METU.",
+      "Built internal software and engineering tooling across the stack before moving full-time into graduate research at METU.",
     icon: "code"
   },
   {
@@ -146,7 +146,7 @@ export const experience: Entry[] = [
     title: "Head of Quantitative Strategies",
     org: "Vortex · Remote (Georgia)",
     detail:
-      "Designed and developed algorithmic trading bots for financial markets, including scalping and swing strategies, performance tuning, and per-investor mandate customisation. Owned the strategy roadmap end to end, from market-data ingestion to backtesting to live deployment.",
+      "Built algorithmic trading bots for financial markets, including scalping and swing strategies, performance tuning, and per-investor strategy customisation. Owned the full pipeline from market-data ingestion through backtesting to live deployment.",
     icon: "trading"
   },
   {
@@ -154,7 +154,7 @@ export const experience: Entry[] = [
     title: "Web Development Project Lead (Self-Initiated)",
     org: "Independent · Finance & trading interfaces",
     detail:
-      "Built a web-based trading interface for financial markets end to end and ran several smaller finance-side projects in parallel. Picked the stack, owned product decisions, and shipped each iteration to production myself.",
+      "Built a web-based trading interface for financial markets and ran several smaller finance-side projects in parallel. Picked the stack, owned product decisions, and shipped each iteration to production myself.",
     icon: "trading"
   },
   {
