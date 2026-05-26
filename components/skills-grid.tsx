@@ -1,33 +1,38 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { skills } from "@/lib/content";
 
-export function SkillsGrid() {
+const SHORT_LABELS: Record<string, string> = {
+  "Software Development": "Software",
+  "Civil Engineering": "Civil Eng",
+  "Graphic Design": "Design",
+  Languages: "Languages"
+};
+
+export function SkillLines() {
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <ul className="flex flex-col">
       {skills.map((group) => (
-        <Card key={group.name}>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-[15px] font-semibold">{group.name}</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-2">
-            <div className="flex flex-wrap gap-1.5">
-              {group.pills.map((pill) => (
-                <Badge
-                  key={pill.label}
-                  variant="outline"
-                  className="font-normal"
-                >
-                  <span className="text-foreground">{pill.label}</span>
-                  {pill.level && (
-                    <span className="text-muted-foreground/80">· {pill.level}</span>
-                  )}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        <li
+          key={group.name}
+          className="grid gap-1 border-b border-border-soft py-4 last:border-b-0 lg:grid-cols-[120px_1fr] lg:gap-6"
+        >
+          <span className="font-mono text-[10.5px] uppercase tracking-widest text-accent">
+            {SHORT_LABELS[group.name] ?? group.name}
+          </span>
+          <p className="text-[13px] leading-relaxed text-slate">
+            {group.pills.map((p, i) => (
+              <span key={p.label}>
+                <span className="text-foreground">{p.label}</span>
+                {p.level && (
+                  <span className="text-slate-dim"> ({p.level})</span>
+                )}
+                {i < group.pills.length - 1 && (
+                  <span className="text-slate-dim">  ·  </span>
+                )}
+              </span>
+            ))}
+          </p>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

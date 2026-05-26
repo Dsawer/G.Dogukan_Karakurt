@@ -1,6 +1,5 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 import type { IconLink as IconLinkType } from "@/lib/content";
 
 const OrcidGlyph = (props: React.SVGProps<SVGSVGElement>) => (
@@ -27,7 +26,15 @@ const glyphFor: Record<IconLinkType["brand"], React.FC<React.SVGProps<SVGSVGElem
   linkedin: LinkedInGlyph
 };
 
-export function IconLink({ link, className }: { link: IconLinkType; className?: string }) {
+export function IconLink({
+  link,
+  showLabel = false,
+  className
+}: {
+  link: IconLinkType;
+  showLabel?: boolean;
+  className?: string;
+}) {
   const Glyph = glyphFor[link.brand];
   return (
     <a
@@ -35,10 +42,14 @@ export function IconLink({ link, className }: { link: IconLinkType; className?: 
       target="_blank"
       rel="noopener noreferrer"
       aria-label={link.label}
-      className={cn(buttonVariants({ variant: "outline", size: "md" }), "gap-2", className)}
+      className={cn(
+        "inline-flex items-center gap-2 text-slate-dim transition-colors hover:text-accent",
+        showLabel ? "text-[13px]" : "p-1.5",
+        className
+      )}
     >
-      <Glyph className="h-4 w-4" />
-      <span>{link.label}</span>
+      <Glyph className="h-[18px] w-[18px]" />
+      {showLabel && <span>{link.label}</span>}
     </a>
   );
 }

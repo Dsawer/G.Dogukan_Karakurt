@@ -1,8 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
-import { SiteNav } from "@/components/site-nav";
-import { SiteFooter } from "@/components/site-footer";
 import { profile } from "@/lib/content";
 import "../globals.css";
 
@@ -58,31 +55,19 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#0a0a0a" }
-  ],
+  themeColor: "#0a192f",
   width: "device-width",
   initialScale: 1
 };
 
 export default function SiteRootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="bg-background text-foreground antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <a href="#main" className="sr-only focus:not-sr-only">
-            Skip to content
-          </a>
-          <SiteNav />
-          <main id="main">{children}</main>
-          <SiteFooter />
-        </ThemeProvider>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="bg-background text-slate antialiased">
+        <a href="#main" className="sr-only focus:not-sr-only">
+          Skip to content
+        </a>
+        {children}
       </body>
     </html>
   );
