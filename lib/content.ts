@@ -67,24 +67,10 @@ export const iconLinks: IconLink[] = [
 export const research = {
   title:
     "Predicting Construction Precedence Relationships from BIM Geometry with Machine Learning",
-  pitch:
-    "I am building a graph neural network that reads a BIM model with assigned OmniClass activities and outputs the full construction schedule — every FS, SS, FF, SF precedence link — so that schedules regenerate themselves whenever the design changes.",
-  sections: [
-    {
-      label: "Problem",
-      body:
-        "BIM and the construction schedule still do not talk to each other. Planners rebuild precedence by hand for every project, and recent text-only ML approaches ignore geometry and break down at real project scale."
-    },
-    {
-      label: "Approach",
-      body:
-        "A single GNN (GraphSAGE / GAT) consumes a three-layer IFC representation — native IFC class and geometry, Uniformat II, and OmniClass T22 — and passes messages over BIM topology to score every candidate precedence link in the schedule."
-    },
-    {
-      label: "Contribution",
-      body:
-        "First end-to-end whole-schedule precedence predictor grounded in BIM topology and standardized classification codes instead of free-form activity text. Designed to transfer across firms and projects."
-    }
+  paragraphs: [
+    "I am building a graph neural network that reads a BIM model and outputs the full construction schedule — every FS, SS, FF, SF precedence link — so that schedules regenerate themselves whenever the design changes.",
+    "BIM and the construction schedule still do not talk to each other; planners rebuild precedence by hand for every project. The model treats the BIM as a graph: nodes are building elements with their IFC class, geometry, and standardized activity codes (Uniformat II, OmniClass T22); edges encode topology like adjacency, support, and containment. Message passing across that graph scores every candidate precedence link, replacing free-form activity text with standardized vocabularies.",
+    "To my knowledge this is the first end-to-end whole-schedule precedence predictor grounded directly in BIM topology rather than free-form activity text, designed to transfer across firms and projects."
   ],
   images: [
     {

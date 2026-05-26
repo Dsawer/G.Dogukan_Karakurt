@@ -11,9 +11,11 @@ export function Research() {
       </header>
 
       <div className="space-y-6 px-6 py-6">
-        <p className="text-pretty text-[15px] leading-relaxed text-slate">
-          {research.pitch}
-        </p>
+        <div className="space-y-4 text-[14.5px] leading-relaxed text-slate">
+          {research.paragraphs.map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+        </div>
 
         <figure className="overflow-hidden rounded-md border border-border-soft">
           <Image
@@ -28,20 +30,6 @@ export function Research() {
             {research.images[0].caption}
           </figcaption>
         </figure>
-
-        <div className="space-y-px">
-          {research.sections.map((s, i) => (
-            <div
-              key={s.label}
-              className={i === 0 ? "pt-0" : "border-t border-border-soft pt-4"}
-            >
-              <h4 className="mb-1.5 font-mono text-[11.5px] uppercase tracking-widest text-accent">
-                {s.label}
-              </h4>
-              <p className="pb-4 text-[14.5px] leading-relaxed text-slate">{s.body}</p>
-            </div>
-          ))}
-        </div>
 
         <figure className="overflow-hidden rounded-md border border-border-soft bg-white">
           <Image
