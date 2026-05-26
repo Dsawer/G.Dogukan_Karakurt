@@ -70,10 +70,6 @@ export default function HomePage() {
             </a>
           </section>
 
-          <footer className="border-t border-border-soft pt-6 text-[12.5px] text-slate-dim">
-            © {new Date().getFullYear()} {profile.name}. Built with Next.js +
-            Tailwind. Deployed on Vercel.
-          </footer>
         </main>
       </div>
     </div>
