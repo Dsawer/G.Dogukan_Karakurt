@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Download, FileText } from "lucide-react";
+import { Download } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { Sidebar } from "@/components/sidebar";
@@ -57,33 +56,14 @@ export default function HomePage() {
           </RowSection>
 
           <RowSection id="resume" title="Resume">
-            <div className="space-y-4">
-              <p className="text-[15.5px] leading-relaxed text-slate">
-                A printable English copy of my CV is available as a PDF. The
-                content above is the canonical version of the same résumé.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <a
-                  href="/assets/cv.pdf"
-                  download="Gurkan-Dogukan-Karakurt-CV.pdf"
-                  className={cn(buttonVariants({ variant: "default", size: "lg" }))}
-                >
-                  <Download className="h-4 w-4" />
-                  Download CV (PDF)
-                </a>
-                <Link
-                  href="/cv"
-                  className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
-                >
-                  <FileText className="h-4 w-4" />
-                  View printable version
-                </Link>
-              </div>
-              <p className="text-[13px] text-slate-dim">
-                Personal contact details are intentionally omitted for privacy.
-                Reach out via LinkedIn for academic correspondence.
-              </p>
-            </div>
+            <a
+              href="/assets/cv.pdf"
+              download="Gurkan-Dogukan-Karakurt-CV.pdf"
+              className={cn(buttonVariants({ variant: "default", size: "lg" }))}
+            >
+              <Download className="h-4 w-4" />
+              Download CV (PDF)
+            </a>
           </RowSection>
 
           <footer className="border-t border-border-soft pt-6 text-[12.5px] text-slate-dim">

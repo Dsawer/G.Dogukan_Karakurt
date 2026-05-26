@@ -17,6 +17,8 @@ export function Sidebar() {
 
     if (!sections.length) return;
 
+    const lastId = navItems[navItems.length - 1].id;
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries
@@ -24,11 +26,29 @@ export function Sidebar() {
           .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
         if (visible[0]?.target?.id) setActiveId(visible[0].target.id);
       },
-      { rootMargin: "-30% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+      { rootMargin: "-25% 0px -45% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
 
     sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
+
+    // When the page is scrolled to (or past) the bottom, force the last
+    // section to be active — IntersectionObserver bands never trigger for
+    // short final sections that sit entirely below the band.
+    const onScroll = () => {
+      const nearBottom =
+        window.innerHeight + window.scrollY >=
+        document.documentElement.scrollHeight - 8;
+      if (nearBottom) setActiveId(lastId);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   return (
